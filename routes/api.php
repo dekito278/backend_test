@@ -14,6 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::get('/pamerans', function(){
+    return response()->json(
+    [
+        "message" => "get method succes"
+    ]
+   );
 });
+
+Route::post('/pameran', function(){
+    return response()->json(
+    [
+        "message" => "post method succes"
+    ]
+   );
+});
+
+Route::put('/pameran/{id}', function($id){
+    return response()->json(
+    [
+        "message" => "put method succes " .$id
+    ]
+   );
+});
+
+Route::delete('/pameran/{id}', function($id){
+    return response()->json(
+    [
+        "message" => "delete method succes " .$id
+    ]
+   );
+});
+
